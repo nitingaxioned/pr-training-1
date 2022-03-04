@@ -3,7 +3,6 @@
 ###################################
 # //Enqueue Theme scripts & style
 ###################################
-
 add_action( 'wp_enqueue_scripts', 'load_script_css' );
 function load_script_css() {
     // for css
@@ -17,7 +16,6 @@ function load_script_css() {
 ###################################
 # // Theme supports 
 ###################################
-
 // to display thumbnail img
 add_theme_support( 'post-thumbnails' );
 
@@ -31,17 +29,14 @@ add_theme_support( 'custom-logo', array(
 	)
 );
 
-
 ###################################
 # // register menues
 ###################################
-
 register_nav_menus(
     array(
         'primary-menu' => 'header menu',
     )
 );
-
 
 ###################################
 # // register sidebar
