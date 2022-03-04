@@ -13,15 +13,22 @@ $posts = get_field('posts_for_list');
 					$img_url = get_the_post_thumbnail_url($current_post_id);
 					$alt = get_post_meta( get_post_thumbnail_id($current_post_id), '_wp_attachment_image_alt', true);
 				}
+                $link = get_permalink($current_post_id);
+                $image = get_field('image', $current_post_id);
                 ?>
                 <li>
                     <?php
                     if ( $title ) {?>
-                        <h4><?php echo $title; ?></h4>
+                        <a title="<?php echo $title; ?>" href="<?php echo $link; ?>">
+                            <h4><?php echo $title; ?></h4>
+                        </a>
                     <?php }
-                    if ( has_post_thumbnail($current_post_id) ) {?>
+                    if ( $img_url ) {?>
                         <img src='<?php echo $img_url; ?>' alt='<?php echo $alt; ?>'>
                     <?php }  
+                    if ( $image ) {?>
+                        <img src='<?php echo $image['url']; ?>' alt='<?php echo $image['alt']; ?>'>
+                    <?php }
                     if ( $content ) {?>
                         <div><?php echo $content; ?></div>
                     <?php } ?>
