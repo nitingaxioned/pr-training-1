@@ -6,7 +6,7 @@ $queryArr = array(
 );
 $res = new wp_Query($queryArr);
 ?>
-<ul>
+<ul class="list">
     <?php if ($res->found_posts < 1 ) { ?>
         <li><p>No posts available  :(</p></li>
         <?php
